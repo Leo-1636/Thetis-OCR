@@ -1,0 +1,30 @@
+# key 是 split 名稱；每個資料集的欄位是 image、answer，以及可有可無的 question
+#   name    : Hub repo，也可以是本機資料夾，例如 D:/Datasets/ChartQA
+#   prompt  : 沒有 question 欄位的資料集，用這句當問題
+#   samples : 取前幾筆，不寫就是整個 split
+
+train:
+  - name: NTOU-SNEA-306/SynthFormulaNet
+    prompt: Convert formula to LaTeX.
+    samples: 25000
+
+  - name: NTOU-SNEA-306/SynthChartNet
+    prompt: Convert chart to Markdown table.
+    samples: 25000
+
+  - name: NTOU-SNEA-306/ChartQA
+    samples: 25000
+
+  - name: NTOU-SNEA-306/DocumentVQA
+    samples: 25000
+
+test:
+  - name: NTOU-SNEA-306/SynthFormulaNet
+    prompt: Convert formula to LaTeX.
+    samples: 500
+
+  - name: NTOU-SNEA-306/ChartQA
+    samples: 500
+
+  - name: NTOU-SNEA-306/DocumentVQA
+    samples: 500

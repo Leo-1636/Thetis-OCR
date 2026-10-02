@@ -1,0 +1,4 @@
+unsloth
+pydantic>=2
+pyyaml
+wandb

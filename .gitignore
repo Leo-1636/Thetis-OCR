@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.venv/
+
+# 訓練輸出
+checkpoints/
+wandb/
+unsloth_compiled_cache/
