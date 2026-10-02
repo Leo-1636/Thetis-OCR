@@ -25,6 +25,3 @@ test:
 
   - name: NTOU-SNEA-306/ChartQA
     samples: 500
-
-  - name: NTOU-SNEA-306/DocumentVQA
-    samples: 500
