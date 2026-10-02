@@ -90,6 +90,9 @@ trainer = SFTTrainer(
 
         report_to = "wandb",
 
+        # For multi-GPU (DDP):
+        ddp_find_unused_parameters = False,
+
         # For vision finetuning:
         max_length = 2048,
         dataset_kwargs = {
@@ -102,5 +105,6 @@ trainer = SFTTrainer(
 
 trainer.train()
 
-model.save_pretrained(config.sft.output_dir)
-tokenizer.save_pretrained(config.sft.output_dir)
+if trainer.is_world_process_zero():     # 多卡時只讓主 process 寫檔
+    model.save_pretrained(config.sft.output_dir)
+    tokenizer.save_pretrained(config.sft.output_dir)
